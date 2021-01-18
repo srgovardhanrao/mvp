@@ -18,7 +18,7 @@ sh label: '', script: '''cd twebs
 }
 stage('deploy'){
   	    steps{
-sh label: '', script: '''cp /Users/govardhanrao/mavenp/mvp/twebs/target/twebs.war /Users/govardhanrao/Downloads/apache-tomcat-8.5.61/webapps'''
+sh label: '', script: '''cp -R /Users/govardhanrao/mavenp/mvp/twebs/target/twebs.war /Users/govardhanrao/Downloads/apache-tomcat-8.5.61/webapps'''
 
 }
   	}
