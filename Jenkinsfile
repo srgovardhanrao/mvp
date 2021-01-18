@@ -14,7 +14,7 @@ pipeline {
   	    steps{
 sh label: '', script: '''cd twebs
 /usr/local/bin/mvn clean install'''
-          archiveArtifacts 'tweb/target/twebs.war'
+          archiveArtifacts 'twebs/target/twebs.war'
         }
 }
 stage('deploy'){
