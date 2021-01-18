@@ -14,11 +14,12 @@ pipeline {
   	    steps{
 sh label: '', script: '''cd twebs
 /usr/local/bin/mvn clean install'''
+          archiveArtifacts 'tweb/target/twebs.war'
         }
 }
 stage('deploy'){
   	    steps{
-sh label: '', script: '''cp -R /Users/govardhanrao/mavenp/mvp/twebs/target/twebs.war /Users/govardhanrao/Downloads/apache-tomcat-8.5.61/webapps'''
+sh label: '', script: '''cp -R ../twebs.war /Users/govardhanrao/Downloads/apache-tomcat-8.5.61/webapps'''
 
 }
   	}
