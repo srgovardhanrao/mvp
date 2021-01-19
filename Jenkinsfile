@@ -25,7 +25,7 @@ sh label: '', script: '''whoami'''
     }
 stage('deploy'){
   	    steps{
-sh label: '', script: '''cp -R /Users/Shared/Jenkins/Home/workspace/simple t project/twebs/target/twebs.war /Users/govardhanrao/Downloads/apache-tomcat-8.5.61/webapps'''
+sh label: '', script: '''curl -v -u admin:admin -T /Users/Shared/Jenkins/Home/workspace/simple t project/twebs/target/twebs.war 'http://localhost:8010//manager/text/deploy?path=rop''''
 
 }
   	}
