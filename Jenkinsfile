@@ -33,3 +33,4 @@ sh label: '', script: '''sudo cp -R /Users/Shared/Jenkins/Home/workspace/simple 
 
 }
 
+}
