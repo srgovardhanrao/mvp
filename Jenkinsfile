@@ -19,7 +19,7 @@ sh label: '', script: '''cd twebs
 }
 stage('deploy'){
   	    steps{
-sh label: '', script: '''sudo jenkins cp -R ../twebs.war /Users/govardhanrao/Downloads/apache-tomcat-8.5.61/webapps'''
+sh label: '', script: '''cp -R ../twebs.war /Users/govardhanrao/Downloads/apache-tomcat-8.5.61/webapps'''
 
 }
   	}
