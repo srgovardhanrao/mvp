@@ -1,1 +1,25 @@
+pipeline {
 
+  agent{
+   label "master"
+  }
+  stages{
+  	
+   stage('install'){
+  	    steps{
+sh label: '', script: '''cd twebs
+/usr/local/bin/mvn clean install'''
+          archiveArtifacts 'twebs/target/twebs.war'
+        }
+}
+    
+stage('deploy'){
+  	    steps{
+sh label: '', script: '''curl -v -u admin:admin -T /Users/Shared/Jenkins/Home/workspace/simpletpip/twebs/target/twebs.war http://localhost:8010/manager/text/deploy?path=/rp'''
+
+}
+  	}
+
+  }
+
+}
